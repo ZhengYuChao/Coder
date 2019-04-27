@@ -43,7 +43,6 @@ static void BubbleSort(ElementType Array[], int Length)
 {
 	int i;
 	int j;
-	ElementType Tmp;
 
 	if (NULL == Array || Length <= 1) {
 		return;
@@ -52,9 +51,7 @@ static void BubbleSort(ElementType Array[], int Length)
 	for (i = 0; i < Length; ++ i) {
 		for (j = i; j < Length; ++ j) {
 			if (Array[i] > Array[j]) {
-				Tmp = Array[i];
-				Array[i] = Array[j];
-				Array[j] = Tmp;
+				SwapElement(&Array[i], &Array[j]);
 			}
 		}
 	}
